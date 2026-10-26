@@ -220,6 +220,7 @@ func (v *Muxer) handle(c net.Conn) {
 	})
 	if err != nil {
 		xl.Warnf("listener is already closed, ignore this request")
+		_ = c.Close()
 	}
 }
 
